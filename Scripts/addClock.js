@@ -52,8 +52,8 @@ function addClock()
     
     // Set up middle element of clock
     var clockFrame = document.createElement("span");
-    clockContainer.role = "menuitem";
-    clockContainer.classList = textExample.classList;
+    clockFrame.role = "menuitem";
+    clockFrame.classList = textExample.classList;
     
     // Set up clock element
     clock = document.createElement("button");
