@@ -10,16 +10,19 @@ var clock = null;
 
 
 // Ensure leading zeroes
-function leadingZero(number)
+function leadingZero(number, digits)
 {
+    digits = digits == null ? 2 : digits;
+
     var text = number.toString();
-        
-    if (text.length < 2)
+
+    var dif = digits-text.length;
+    for (var i=0; i<dif; i++)
     {
-        return "0"+text;
+        text = "0" + text;
     }
-    
-    return number;
+
+    return text;
 }
 
 
@@ -29,8 +32,8 @@ function clockTick()
     if (clock != null)
     {
         var date = new Date();
-        clock.innerHTML = date.getFullYear() + "/" + leadingZero(date.getMonth()) + "/" + leadingZero(date.getDate()) + "T"
-            + leadingZero(date.getHours()) + ":" + leadingZero(date.getMinutes()) + ":" + leadingZero(date.getSeconds()) + "Z";
+        clock.innerHTML = date.getUTCFullYear() + "-" + leadingZero(date.getUTCMonth()) + "-" + leadingZero(date.getUTCDate()) + "T"
+            + leadingZero(date.getUTCHours()) + ":" + leadingZero(date.getUTCMinutes()) + ":" + leadingZero(date.getUTCSeconds())  + "." + leadingZero(date.getUTCMilliseconds(), 3) + "Z";
     }
 }
 
@@ -75,4 +78,4 @@ function addClock()
 window.onload = addClock;
 
 // Set the clock to tick every second
-setInterval(clockTick,1000);
+setInterval(clockTick,10);
