@@ -77,5 +77,5 @@ function addClock()
 // Create the clock in the right place when the window is loaded
 window.onload = addClock;
 
-// Set the clock to tick every second
+// Set the clock to tick every 10 milliseconds
 setInterval(clockTick,10);
