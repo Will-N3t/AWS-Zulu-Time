@@ -1,0 +1,13 @@
+{
+  "name": "AWS Zulu Time Clock",
+  "description": "Adds a Zulu-time clock to AWS",
+  "version": "0.1",
+  "manifest_version": 3,
+
+  "content_scripts": [
+    {
+      "matches": ["https://*.console.aws.amazon.com/*"],
+      "js": ["Scripts/addClock.js"]
+    }
+  ]
+}
