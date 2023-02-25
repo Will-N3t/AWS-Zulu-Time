@@ -41,7 +41,7 @@ function clockTick()
 // Add the clock
 function addClock()
 {
-    var menuContainer = document.getElementsByClassName('globalNav-033')[0];
+    var menuContainer = document.getElementsByClassName('globalNav-123')[0];
     var menu = menuContainer.children[2];
     var textExample = menu.children[2].children[1].children[0].children[1].children[0].children[0].children[0];
 
